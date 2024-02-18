@@ -47,6 +47,24 @@ services:
       MYSQL_USER: docker
       MYSQL_PASSWORD: docker
 
+  web:
+    build:
+      context: .
+      dockerfile: web.dockerfile
+    image: web-growdev-academic
+    container_name: web-growdev-academic
+    working_dir: /var/www/
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./web:/var/www
+    networks:
+      - growdev-academic-network
+    depends_on:
+      - api
+    links:
+      - api
+
 networks:
   growdev-academic-network:
     driver: bridge
