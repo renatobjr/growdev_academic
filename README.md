@@ -41,13 +41,13 @@ docker-compose run web npm ci
 docker-compose up
 ~~~
 
-3. Running migratons and seeds:
+3. Running migratons and seeds on api/:
 ~~~bash
 npm run migrate:docker
 npm run seed:docker
 ~~~
 
-Run Docker  
+Next times:  
 
 ~~~bash  
 docker-compose up 
