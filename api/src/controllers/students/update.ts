@@ -7,7 +7,7 @@ const update = async (req: Request, res: Response, next: NextFunction) => {
     await studentSchema.update.validateAsync(req.body, {
       abortEarly: false,
     });
-    res.send(await students.update(req.body));
+    res.send(await students.update(req.body, req.params.id));
   } catch (error) {
     next(error);
   }

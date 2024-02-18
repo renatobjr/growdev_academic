@@ -1,9 +1,9 @@
 import request from "supertest";
 import app from "../src/app";
-import { describe, it, expect } from "@jest/globals";
+import { describe, test, expect } from "@jest/globals";
 
 describe("POST /auth/login", () => {
-  it("should return 200 OK", async () => {
+  test("should return 200 OK", async () => {
     const response: request.Response = await request(app)
       .post("/auth/login")
       .send({ username: "admin", password: "admin" });
@@ -13,7 +13,7 @@ describe("POST /auth/login", () => {
 });
 
 describe("POST /auth/login", () => {
-  it("should return 401 Unauthorized with wrong password", async () => {
+  test("should return 401 Unauthorized with wrong password", async () => {
     const response: request.Response = await request(app)
       .post("/auth/login")
       .send({ username: "admin", password: "wrong" });
@@ -23,7 +23,7 @@ describe("POST /auth/login", () => {
 });
 
 describe("POST /auth/login", () => {
-  it("should return 401 Unauthorized with wrong username", async () => {
+  test("should return 401 Unauthorized with wrong username", async () => {
     const response: request.Response = await request(app)
       .post("/auth/login")
       .send({ username: "wrong", password: "admin" });

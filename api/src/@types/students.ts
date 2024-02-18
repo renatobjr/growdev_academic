@@ -5,9 +5,8 @@ export type create = {
 };
 
 export type update = {
-  id: number;
-  name: string;
-  email: string;
+  name?: string;
+  email?: string;
 };
 
 export type remove = {

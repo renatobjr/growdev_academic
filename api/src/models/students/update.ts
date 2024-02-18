@@ -2,9 +2,9 @@ import { update as updateStudentType } from "../../@types/students";
 import knexConnect from "../../utils/knexConnect";
 import apiResponse from "../../utils/apiResponse";
 
-const update = async (payload: updateStudentType) => {
+const update = async (payload: updateStudentType, id: string) => {
   try {
-    const { id, name, email } = payload;
+    const { name, email } = payload;
     const student = await knexConnect("students")
       .where({ id });
 

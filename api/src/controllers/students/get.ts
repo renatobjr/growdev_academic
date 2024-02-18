@@ -4,7 +4,7 @@ import studentSchema from "../../schemas/students_schema";
 
 const get = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    await studentSchema.get.validateAsync(req.query, {
+    await studentSchema.get.validateAsync(req.params, {
       abortEarly: false,
     });
     res.send(await students.get({ id: req.params.id }));

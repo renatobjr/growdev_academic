@@ -4,7 +4,8 @@ import studentSchema from "../../schemas/students_schema";
 
 const remove = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    await studentSchema.delete.validateAsync(req.params.id, {
+    console.log(req.params.id);
+    await studentSchema.delete.validateAsync(req.params, {
       abortEarly: false,
     });
     res.send(await students.remove({ id: req.params.id }));

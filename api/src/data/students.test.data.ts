@@ -1,11 +1,9 @@
 import students from '../utils/students';
 
 const insertStudent = {
-  RA: students.generateRA(),
   name: 'John Doe',
   email: 'jonhdoe@null.net',
-  CPF: '123.456.789-00',
-  status: 'active',
+  cpf: '12312312312',
 }
 
 const updateStudent = {

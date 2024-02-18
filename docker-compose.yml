@@ -34,6 +34,19 @@ services:
       MYSQL_USER: docker
       MYSQL_PASSWORD: docker
 
+  database-test:
+    image: mariadb:11.3-rc-jammy
+    container_name: db-growdev-academic-test
+    ports:
+      - "3307:3306"
+    networks:
+      - growdev-academic-network
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: growdev_test
+      MYSQL_USER: docker
+      MYSQL_PASSWORD: docker
+
 networks:
   growdev-academic-network:
     driver: bridge

@@ -26,10 +26,10 @@ const config: { [key: string]: Knex.Config } = {
   test: {
     client: "mysql",
     connection: {
-      host: process.env.MYSQL_HOST,
-      user: process.env.MYSQL_USER,
-      password: process.env.MYSQL_PASSWORD,
-      database: process.env.MYSQL_DB_NAME,
+      host: process.env.MYSQL_TEST_HOST,
+      user: process.env.MYSQL_TEST_USER,
+      password: process.env.MYSQL_TEST_PASSWORD,
+      database: process.env.MYSQL_DB_TEST_NAME,
       charset: "utf8",
     },
     migrations: {

@@ -3,7 +3,7 @@ import apiResponse from "../../utils/apiResponse";
 
 const list = async() => {
   try {
-    const students = await knexConnect("students").select();
+    const students = await knexConnect("students").select().where({ status: "active" });
 
     return apiResponse(200, "OK", students);
   } catch (error: any) {

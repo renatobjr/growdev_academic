@@ -8,9 +8,8 @@ const studentSchema: ValidatorSchema = {
     cpf: Joi.string().required(),
   }),
   update: Joi.object({
-    id: Joi.number().required(),
-    name: Joi.string().required(),
-    email: Joi.string().email().required(),
+    name: Joi.string(),
+    email: Joi.string().email(),
   }),
   delete: Joi.object({
     id: Joi.number().required(),

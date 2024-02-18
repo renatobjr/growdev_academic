@@ -11,7 +11,7 @@ const remove = async (payload: removeStudent) => {
       return apiResponse(404, 'Not Found');
     }
 
-    await knexConnect('students').where({ id }).del();
+    await knexConnect('students').where({ id }).update({ status: 'disabled' });
 
     return apiResponse(200, 'OK');
   } catch (error: any) {

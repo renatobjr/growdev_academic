@@ -5,7 +5,7 @@ import apiResponse from "../../utils/apiResponse";
 const get = async (payload: getStudent) => {
   try {
     const { id } = payload;
-    const student = await knexConnect("students").where({ id });
+    const student = await knexConnect("students").where({ id, status: "active" });
 
     if (!student) {
       return apiResponse(404, "Not Found");

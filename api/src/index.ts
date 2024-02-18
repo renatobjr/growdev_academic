@@ -1,17 +1,7 @@
 import app from "./app";
-import knex from "knex";
-import config from "./db/knexfile";
-
-const knexConnect = knex(config["firstExec"]);
+import createDatabase from "./db/createDatabase";
 
 app.listen(process.env.PORT, () => {
-  knexConnect
-    .raw(`CREATE DATABASE IF NOT EXISTS ${process.env.MYSQL_DB_NAME}`)
-    .then(() => {
-      console.log(
-        `Database ${process.env.MYSQL_DB_NAME} created or successfully checked`
-      );
-      knexConnect.destroy();
-    });
+  createDatabase();
   console.log(`Server is running on port ${process.env.PORT}`);
 });
