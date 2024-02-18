@@ -2,16 +2,17 @@
   "name": "api",
   "version": "1.0.0",
   "description": "An API to manage students",
-  "main": "src/index.js",
+  "main": "src/index.ts",
   "scripts": {
     "dev": "nodemon",
     "knex": "knex --knexfile src/db/knexfile.ts",
     "migrate": "npm run knex migrate:latest",
     "migrate:rollback": "npm run knex migrate:rollback",
-    "mihgrate:docker": "docker exec api-server-auth npm run migrate",
+    "migrate:docker": "docker exec api-growdev-academic npm run migrate",
     "seed": "npm run knex seed:run",
-    "seed:docker": "docker exec api-server-auth npm run seed",
-    "test": "jest --watchAll --detectOpenHandles"
+    "seed:docker": "docker exec api-growdev-academic npm run seed",
+    "jest": "jest --watchAll --detectOpenHandles",
+    "test": "docker exec api-growdev-academic npm run jest"
   },
   "author": "Renato Bonfim Jr",
   "license": "ISC",
