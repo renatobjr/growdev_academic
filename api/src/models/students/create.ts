@@ -15,7 +15,7 @@ const create = async (payload: createStudent) => {
       status: "active",
     });
 
-    return apiResponse(201, "Created", student);
+    return apiResponse(201, "New student created", student);
   } catch (error: any) {
     return apiResponse(500, error.message);
   }

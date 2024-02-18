@@ -6,6 +6,9 @@ import path from "path";
 // Routes
 import authRouter from "./routes/auth";
 import studentsRouter from "./routes/students";
+// Docs
+import swaggerUi from "swagger-ui-express";
+import { apiDocs } from "./docs/apidocs";
 
 require("dotenv").config({ path: path.join(__dirname, "../.env") });
 
@@ -31,6 +34,7 @@ app.get("/", (req, res) => {
 
 app
   .use("/auth", authRouter)
-  .use("/students", studentsRouter);
+  .use("/students", studentsRouter)
+  .use("/docs", swaggerUi.serve, swaggerUi.setup(apiDocs));
 
 export default app;

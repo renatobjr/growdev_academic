@@ -26,7 +26,7 @@ Go to the project directory
   cd growdev_academic
 ~~~
 
-For fisrt time running the follow teh instructions:
+For fisrt time running the follow the instructions:
 
 1. Running the api and web npm ci
 
@@ -51,6 +51,23 @@ Next times:
 
 ~~~bash  
 docker-compose up 
-~~~  
+~~~
 
+For running test follow the instructions:
+
+1. Rename the NODE_ENV to "test"
+~~~bash  
+NODE_ENV=test 
+~~~
+
+2. Running migratons and seeds on api/ to populate the test database:
+~~~bash
+npm run migrate:docker
+npm run seed:docker
+~~~
+
+3. Running the follow command:
+~~~bash
+npm run test
+~~~
 
