@@ -4,7 +4,14 @@
   "description": "An API to manage students",
   "main": "src/index.js",
   "scripts": {
-    "test": "jest --watchAll"
+    "dev": "nodemon",
+    "knex": "knex --knexfile src/db/knexfile.ts",
+    "migrate": "npm run knex migrate:latest",
+    "migrate:rollback": "npm run knex migrate:rollback",
+    "mihgrate:docker": "docker exec api-server-auth npm run migrate",
+    "seed": "npm run knex seed:run",
+    "seed:docker": "docker exec api-server-auth npm run seed",
+    "test": "jest --watchAll --detectOpenHandles"
   },
   "author": "Renato Bonfim Jr",
   "license": "ISC",
