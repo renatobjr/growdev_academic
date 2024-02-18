@@ -5,6 +5,7 @@ import express from "express";
 import path from "path";
 // Routes
 import authRouter from "./routes/auth";
+import studentsRouter from "./routes/students";
 
 require("dotenv").config({ path: path.join(__dirname, "../.env") });
 
@@ -28,6 +29,8 @@ app.get("/", (req, res) => {
   res.send(apiResponse(200, "Welcome to the API", null));
 });
 
-app.use("/auth", authRouter);
+app
+  .use("/auth", authRouter)
+  .use("/students", studentsRouter);
 
 export default app;
