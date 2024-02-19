@@ -5,7 +5,8 @@
 ![Static Badge](https://img.shields.io/badge/Vuetify-3-2767C0)
 ![Static Badge](https://img.shields.io/badge/Node-16.20.1-056F00)
 ![Static Badge](https://img.shields.io/badge/Docker_Compose-1.29.2-blue)
-![Static Badge](https://img.shields.io/badge/Jest-323330)
+![Static Badge](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)
+![Static Badge](https://img.shields.io/badge/-Swagger-%23Clojure?style=for-the-badge&logo=swagger&logoColor=white)
 
 
 # Growdev Academy
