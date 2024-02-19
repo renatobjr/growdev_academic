@@ -15,16 +15,6 @@ const apiDocs = {
       description: 'Development server',
     },
   ],
-  tags: [
-    {
-      name: 'students',
-      description: 'Students API',
-    },
-    {
-      name: 'users',
-      description: 'Users API',
-    }
-  ],
   paths: {
     auth: {
       post: login,

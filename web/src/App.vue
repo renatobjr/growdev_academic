@@ -10,7 +10,6 @@
   })
 
   const layout = computed(() => {
-    console.log(route)
     let currentLayout = Login;
     if (route.meta.layout === 'base') {
       currentLayout = Base;

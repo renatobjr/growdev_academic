@@ -28,7 +28,10 @@ export default defineConfig({
       },
     }),
   ],
-  define: { 'process.env': {} },
+  define: { 'process.env': {
+    URL_API: "http://localhost:3000",
+    SESSION_TOKEN: 'session_token',
+  } },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))

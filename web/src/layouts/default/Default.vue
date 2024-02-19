@@ -1,9 +1,29 @@
-<script setup></script>
+<script setup>
+import { useSnackbarStore } from "@/store/snackbar";
+import { storeToRefs } from 'pinia';
+
+const snackBarStore = useSnackbarStore();
+const { snackbar } = storeToRefs(snackBarStore);
+</script>
 
 <template>
   <v-app>
     <v-main>
-      default
+
+      <v-snackbar
+        v-model="snackbar.show"
+        variant="flat"
+        location="top"
+        :color="snackbar.color"
+      >
+        <span>{{ snackbar.message }}</span>
+
+        <template v-slot:actions>
+          <v-btn color="primary" flat @click="snackbar.show = false"
+            >Close</v-btn
+          >
+        </template>
+      </v-snackbar>
       <slot />
     </v-main>
   </v-app>
