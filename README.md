@@ -60,14 +60,14 @@ For running test follow the instructions:
 NODE_ENV=test 
 ~~~
 
-2. Running migratons and seeds on api/ to populate the test database:
-~~~bash
-npm run migrate:docker
-npm run seed:docker
-~~~
+2. Follow the same commands about up a dockcer container for the first time
 
 3. Running the follow command:
 ~~~bash
 npm run test
 ~~~
+
+## Tips:
+1. The main user account wiil be create after running the seeds, look at the database for mor info. The passowrd it's equal to username.
+2. After running seeds also will be imported 4 users.
 
