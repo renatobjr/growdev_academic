@@ -3,10 +3,11 @@
 ![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)
 ![Static Badge](https://img.shields.io/badge/Vue-3-42D392)
 ![Static Badge](https://img.shields.io/badge/Vuetify-3-2767C0)
-![Static Badge](https://img.shields.io/badge/Node-16.20.1-056F00)
+![Static Badge](https://img.shields.io/badge/Node-18.18.0-056F00)
 ![Static Badge](https://img.shields.io/badge/Docker_Compose-1.29.2-blue)
-![Static Badge](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)
-![Static Badge](https://img.shields.io/badge/-Swagger-%23Clojure?style=for-the-badge&logo=swagger&logoColor=white)
+![Static Badge](https://img.shields.io/badge/Jest-29.7-red)
+![Static Badge](https://img.shields.io/badge/Swagger-5-6A9501)
+![Static Badge](https://img.shields.io/badge/Knex-3.1-874523)
 
 
 # Growdev Academy
