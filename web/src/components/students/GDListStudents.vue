@@ -113,7 +113,7 @@ watch(
         <td>{{ item.name }}</td>
         <td>{{ item.email }}</td>
         <td>{{ normalize.formatCpf(item.CPF) }}</td>
-        <td> <v-chip label color="orange-darken-4" class="text-uppercase">{{ item.status }}</v-chip></td>
+        <td> <v-chip label color="green-darken-4" class="text-uppercase">{{ item.status }}</v-chip></td>
         <td>{{ normalize.formatDate(item.created_at) }}</td>
         <td>
           <v-btn color="primary" class="mr-2" @click="edit(item.id)">
