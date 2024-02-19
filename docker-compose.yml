@@ -1,0 +1,74 @@
+version: '3'
+services:
+  api:
+    build:
+      context: .
+      dockerfile: api.dockerfile
+    image: api-growdev-academic
+    container_name: api-growdev-academic
+    working_dir: /var/www/
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./api:/var/www
+    networks:
+      - growdev-academic-network
+    depends_on:
+      - database
+    links:
+      - database
+
+  database:
+    image: mariadb:11.3-rc-jammy
+    container_name: db-growdev-academic
+    volumes:
+      - ./start-sql:/docker-entrypoint-initdb.d
+      - db-growdev-academic-data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - growdev-academic-network
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: growdev
+      MYSQL_USER: docker
+      MYSQL_PASSWORD: docker
+
+  database-test:
+    image: mariadb:11.3-rc-jammy
+    container_name: db-growdev-academic-test
+    ports:
+      - "3307:3306"
+    networks:
+      - growdev-academic-network
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: growdev_test
+      MYSQL_USER: docker
+      MYSQL_PASSWORD: docker
+
+  web:
+    build:
+      context: .
+      dockerfile: web.dockerfile
+    image: web-growdev-academic
+    container_name: web-growdev-academic
+    working_dir: /var/www/
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./web:/var/www
+    networks:
+      - growdev-academic-network
+    depends_on:
+      - api
+    links:
+      - api
+
+networks:
+  growdev-academic-network:
+    driver: bridge
+
+volumes:
+  db-growdev-academic-data:
+    driver: local
