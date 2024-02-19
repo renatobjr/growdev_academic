@@ -18,10 +18,9 @@ const login = async () => {
   if (!is.valid) return;
 
   const result = await useAuthStore().login(loginData);
-  console.log(result)
   if (!result) {
     useSnackbarStore().showSnackbar({
-      message: 'Invalid username or password',
+      message: 'Não foi possível realizar o login. Verifique suas credenciais e tente novamente.',
       color: 'error',
     });
   } else {
@@ -34,7 +33,9 @@ const login = async () => {
 <template>
   <v-form ref="form">
     <gd-card>
-      <template v-slot:title>Login</template>
+      <template v-slot:title>
+        <v-img class="mb-8" src="/public/svg/logo_growdev.svg" max-height="50" contain alt="Growdev Academic"></v-img>
+      </template>
       <template v-slot:content>
         <v-text-field
           v-model="loginData.username"

@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.post('/create', isAuth, controller.create);
 router.put('/update/:id', isAuth, controller.update);
-router.delete('/delete/:id', isAuth, controller.remove);
+router.put('/delete/:id', isAuth, controller.remove);
 router.get('/list', isAuth, controller.list);
 router.get('/get/:id', isAuth, controller.get);
 

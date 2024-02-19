@@ -30,6 +30,7 @@ const config: { [key: string]: Knex.Config } = {
       user: process.env.MYSQL_TEST_USER,
       password: process.env.MYSQL_TEST_PASSWORD,
       database: process.env.MYSQL_DB_TEST_NAME,
+      timezone: "UTC",
       charset: "utf8",
     },
     migrations: {
@@ -48,6 +49,8 @@ const config: { [key: string]: Knex.Config } = {
       user: process.env.MYSQL_USER,
       password: process.env.MYSQL_PASSWORD,
       database: process.env.MYSQL_DB_NAME,
+      timezone: "UTC -3",
+      dateStrings: true,
       charset: "utf8",
     },
     migrations: {

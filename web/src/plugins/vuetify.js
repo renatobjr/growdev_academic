@@ -7,6 +7,7 @@
 // Styles
 import '@mdi/font/css/materialdesignicons.css'
 import 'vuetify/styles'
+import '@/styles/custom.css'
 
 // Composables
 import { createVuetify } from 'vuetify'
@@ -16,8 +17,8 @@ const GdTheme = {
   colors: {
     background: "#F5F5F5",
     surface: "#fafafa",
-    primary: "#0A2239",
-    secondary: "#52D1DC",
+    primary: "#2B385B",
+    secondary: "#FA8533",
     accent: "#42BFDD",
     error: "#F44336",
     info: "#2196F3",
